@@ -7,9 +7,9 @@
   },
   "favicon": "/favicon.svg",
   "colors": {
-   "primary": "#D80027", // Vermelho vibrante
+     "primary": "#D80027", // Vermelho vibrante
   "light": "#FF5A5A",   // Vermelho claro
-  "dark": "#8B000",    // Vermelho escuro
+  "dark": "#8B0000",    // Vermelho escuro
   "background": {
     "light": "#FFFFFF", // Branco para fundo claro
     "dark": "#1C1C1E"   // Cinza muito escuro para fundo escuro
