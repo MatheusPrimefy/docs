@@ -1,0 +1,91 @@
+---
+title: 'Test cards'
+description: 'Description of your new file.'
+---
+
+Reduce the chances of errors. Learn more about different testing methods for simulating and validating your card payment integration before the launch.
+
+<aside>
+💡 To use the test cards, you must contact our team to enable transactions in the staging environment.
+
+</aside>
+
+## What are test cards?
+
+Test cards are fictional credit cards. These cards are primarily used by development professionals to simulate, validate, and confirm the proper functioning of checkout processes and other types of online payment environments.
+
+This page includes test card numbers and other information to ensure that your integration works correctly. We recommend creating different scenarios during your testing phase to guarantee good results in various situations.
+
+<aside>
+⚠️ Please do not use test card numbers in a production environment. These cards are valid only in the test environment.
+
+</aside>
+
+## List of National Cards
+
+| Number | Card Banner |
+| --- | --- |
+| 4539003370725497 | Visa (Typed) |
+| 4761340000000035 | Visa (Chip & PIN) |
+| 4716588836362104 | Visa (Card Stripe) |
+| 4532650104137832 | Visa Electron (Debit) |
+| 5356066320271893 | MasterCard (Typed) |
+| 5201561050024014 | MasterCard (Chip & PIN) |
+| 5577270004286630 | MasterCard (Card Stripe) |
+| 5138692036125449 | MasterCard Maestro (Debit) |
+
+<aside>
+💡 Following the rules above, you can use any Cardholder Name in the field `holder_name`, a valid month in the field `expiration_month`**,** a valid year and in the future in the field `expiration_year` and finally, a valid value in the `security_code` to test your transactions.
+
+</aside>
+
+## List of Declined National Cards
+
+You should test card numbers that will automatically encounter some error. This way, it becomes easier to verify different possibilities, reducing the likelihood of errors after the launch.
+
+| **Number** | **Description** |
+| --- | --- |
+| 6011457819940087 | The transaction will be declined with a code "`card_declined`" |
+| 4929710426637678 | The transaction will be declined with a code "`card_declined`" |
+| 4710426743216178 | The transaction will be declined with a code "`service_request_timeout`" |
+
+## List of Declined International Cards
+
+You should test card numbers that will automatically encounter some error. This way, it becomes easier to verify different possibilities, reducing the probability of errors after the launch.
+
+| Number | Card Banner | Country |
+| --- | --- | --- |
+| 4000001240000000 | Visa | Canada (CA) |
+| 4000004840008001 | Visa | Mexico (MX) |
+| 4242424242424242 | Visa | United States (US) |
+| 4000000400000008 | Visa | Austria (AT) |
+| 4000006200000007 | Visa | Portugal (PT) |
+| 4000008260000000 | Visa (Debit) | United Kingdom (GB) |
+| 4000003800000008 | Visa | Italy (IT) |
+| 4000000360000006 | Visa | Australia (AU) |
+| 4000003920000003 | Visa | Japan (JP) |
+| 3530111333300000 | JCB | Japan (JP)**** |
+
+<aside>
+💡 Any address and CVC (Card Verification Code) entered will be accepted. Any future expiration date will also be accepted. You may also want to simulate more specific error scenarios as the ones below:
+`invalid_expiry_month:`  Use an invalid month. For example: **13.**
+`invalid_expiry_year:` Use an expiration date in the past. For example: **1970.**
+`invalid_cvc:` Use only two verification digits for the card. For example: **99.**
+
+</aside>
+
+---
+
+**Related Content**
+
+<aside>
+<img src="https://www.notion.so/icons/credit-card_red.svg" alt="https://www.notion.so/icons/credit-card_red.svg" width="40px" />
+
+[Payment Methods - Credit Card](https://www.notion.so/Credit-Card-28697c67fb4948a4a01edc532b81545f?pvs=21)
+
+</aside>
+
+<aside>
+<img src="POST.png" alt="POST.png" width="40px" /> [POST - Add card](https://www.notion.so/9a77bf4b15b54708b4a00b3752efa643?pvs=21)
+
+</aside>
