@@ -60,9 +60,9 @@
         }
       },
       "post": {
-        "description": "Creates a new plant in the store",
+        "description": "POST - Add a new establishment - Individual (Individual seller)",
         "requestBody": {
-          "description": "Plant to add to the store",
+          "description": "For an Individual seller to use Primefy as a partner for payment processing and more, some information is required, as follows:",
           "content": {
             "application/json": {
               "schema": {
