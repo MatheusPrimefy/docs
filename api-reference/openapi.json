@@ -1,7 +1,7 @@
-  "openapi": "3.0.1",
+ "openapi": "3.0.1",
   "info": {
-    "title": "OpenAPI Primefy API",
-    "description": "API de integração com a plataforma Primefy para processamento de pagamentos e gestão de estabelecimentos.",
+    "title": "OpenAPI Plant Store",
+    "description": "A sample API that uses a plant store as an example to demonstrate features in the OpenAPI specification",
     "license": {
       "name": "MIT"
     },
@@ -9,7 +9,7 @@
   },
   "servers": [
     {
-      "url": "https://api.primefy.com.br"
+      "url": "http://sandbox.mintlify.com"
     }
   ],
   "security": [
@@ -18,23 +18,54 @@
     }
   ],
   "paths": {
-    "/signup": {
+    "/plants": {
+      "get": {
+        "description": "Returns all plants from the system that the user has access to",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The maximum number of results to return",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Plant response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Plant"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
       "post": {
-        "description": "Cadastra um novo estabelecimento para Pessoa Jurídica ou Física na plataforma Primefy.",
+        "description": "POST - Add a new establishment - Individual (Individual seller)",
         "requestBody": {
-          "description": "Informações obrigatórias para criar um estabelecimento na plataforma Primefy.",
+          "description": "For an Individual seller to use Primefy as a partner for payment processing and more, some information is required, as follows:",
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "plan": { "type": "string", "description": "Plano comercial." },
-                  "identificationNumber": { "type": "string", "description": "CPF ou CNPJ do estabelecimento." },
-                  "name": { "type": "string", "description": "Nome do estabelecimento." },
-                  "email": { "type": "string", "description": "E-mail para contato." },
-                  "password": { "type": "string", "description": "Senha de acesso." }
-                },
-                "required": ["plan", "identificationNumber", "name", "email", "password"]
+                "$ref": "#{{baseUrl}}/signup/"
               }
             }
           },
@@ -42,22 +73,50 @@
         },
         "responses": {
           "200": {
-            "description": "Estabelecimento cadastrado com sucesso.",
+            "description": "plant response",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "id": { "type": "integer", "description": "ID do estabelecimento." },
-                    "name": { "type": "string", "description": "Nome do estabelecimento." },
-                    "status": { "type": "string", "description": "Status do estabelecimento." }
-                  }
+                  "$ref": "#/components/schemas/Plant"
                 }
               }
             }
           },
           "400": {
-            "description": "Erro ao cadastrar estabelecimento.",
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/plants/{id}": {
+      "delete": {
+        "description": "Deletes a single plant based on the ID supplied",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of plant to delete",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Plant deleted",
+            "content": {}
+          },
+          "400": {
+            "description": "unexpected error",
             "content": {
               "application/json": {
                 "schema": {
@@ -72,13 +131,57 @@
   },
   "components": {
     "schemas": {
-      "Error": {
+      "Plant": {
+        "required": [
+          "name"
+        ],
         "type": "object",
         "properties": {
-          "error": { "type": "integer", "description": "Código de erro." },
-          "message": { "type": "string", "description": "Mensagem de erro." }
-        },
-        "required": ["error", "message"]
+          "name": {
+            "description": "The name of the plant",
+            "type": "string"
+          },
+          "tag": {
+            "description": "Tag to specify the type",
+            "type": "string"
+          }
+        }
+      },
+      "NewPlant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Plant"
+          },
+          {
+            "required": [
+              "id"
+            ],
+            "type": "object",
+            "properties": {
+              "id": {
+                "description": "Identification number of the plant",
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          }
+        ]
+      },
+      "Error": {
+        "required": [
+          "error",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
       }
     },
     "securitySchemes": {
