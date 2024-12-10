@@ -78,7 +78,7 @@
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Establishments",
       "pages": [
         "api-reference/endpoint/get",
         "api-reference/endpoint/create",
@@ -86,7 +86,7 @@
       ]
     },
      {
-      "group": "Endpoint ",
+      "group": "Users ",
       "pages": [
         "api-reference/endpoint/get",
         "api-reference/endpoint/create",
@@ -94,7 +94,7 @@
       ]
     },
      {
-      "group": "Endpoint ",
+      "group": "Customers ",
       "pages": [
         "api-reference/endpoint/get",
         "api-reference/endpoint/create",
@@ -102,7 +102,7 @@
       ]
     },
      {
-      "group": "Endpoint ",
+      "group": "Cards ",
       "pages": [
         "api-reference/endpoint/get",
         "api-reference/endpoint/create",
@@ -110,7 +110,7 @@
       ]
     },
      {
-      "group": "Endpoint ",
+      "group": "Payment links ",
       "pages": [
         "api-reference/endpoint/get",
         "api-reference/endpoint/create",
@@ -118,7 +118,7 @@
       ]
     },
      {
-      "group": "Endpoint ",
+      "group": "Payment Split ",
       "pages": [
         "api-reference/endpoint/get",
         "api-reference/endpoint/create",
@@ -126,7 +126,7 @@
       ]
     },
      {
-      "group": "Endpoint ",
+      "group": "Products ",
       "pages": [
         "api-reference/endpoint/get",
         "api-reference/endpoint/create",
@@ -134,7 +134,7 @@
       ]
     },
      {
-      "group": "Endpoint ",
+      "group": "Discount Coupons ",
       "pages": [
         "api-reference/endpoint/get",
         "api-reference/endpoint/create",
@@ -142,7 +142,7 @@
       ]
     },
      {
-      "group": "Endpoint ",
+      "group": "Sales ",
       "pages": [
         "api-reference/endpoint/get",
         "api-reference/endpoint/create",
@@ -150,7 +150,7 @@
       ]
     },
      {
-      "group": "Endpoint ",
+      "group": "Signatures ",
       "pages": [
         "api-reference/endpoint/get",
         "api-reference/endpoint/create",
@@ -158,7 +158,7 @@
       ]
     },
      {
-      "group": "Endpoint ",
+      "group": "Financial ",
       "pages": [
         "api-reference/endpoint/get",
         "api-reference/endpoint/create",
@@ -166,22 +166,14 @@
       ]
     },
      {
-      "group": "Endpoint ",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
-      ]
-    },
-     {
-      "group": "Endpoint ",
+      "group": "Webhooks ",
       "pages": [
         "api-reference/endpoint/get",
         "api-reference/endpoint/create",
         "api-reference/endpoint/delete"
       ]
     }
-  ],
+    
   "footerSocials": {
     "x": "https://x.com/mintlify",
     "github": "https://github.com/mintlify",
