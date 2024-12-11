@@ -1,0 +1,132 @@
+---
+title: 'Error Codes'
+description: 'Description of your new file.'
+---
+
+# HTTP Status Codes and Payment Errors
+
+Primefy uses conventional HTTP response codes to indicate whether an HTTP request has been successfully completed. The responses are grouped into five classes.
+
+## Response Classes
+
+| Class                   | Response |
+| ----------------------- | -------- |
+| Informational Responses | 1xx      |
+| Success Responses       | 2xx      |
+| Redirection             | 3xx      |
+| Client Error Responses  | 4xx      |
+| Server Error Responses  | 5xx      |
+
+## HTTP Status Table
+
+| Status | Message               | What does it mean?                                                                                                                 |
+| ------ | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| 200    | Ok                    | This request was successful. The meaning of success varies depending on the HTTP method used.                                      |
+| 201    | Created               | The request was successful, and a new resource was created as a result.                                                            |
+| 401    | Unauthorized          | Client without permission or not authenticated.                                                                                    |
+| 403    | Forbidden             | The client does not have access rights to the content, so the server is rejecting the request.                                     |
+| 404    | Not found             | HTTP response that indicates the client was able to communicate with the server, but the server could not find what was requested. |
+| 422    | Unprocessable Entity  | The request is well-formed but unable to be followed due to semantic errors.                                                       |
+| 500    | Internal Server Error | The server encountered a situation it doesn't know how to handle.                                                                  |
+
+## Table of Payment with Card Errors
+
+### Visa
+
+| Code | What does it mean?                                                                                                                     |
+| ---- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| 4    | Unauthorized transaction. Please contact your bank to try again.                                                                       |
+| 15   | Unauthorized transaction. Contact your bank to try again.                                                                              |
+| 51   | Unauthorized transaction. Card restricted due to insufficient credit limit. Please contact your issuing bank.                          |
+| 39   | Unauthorized transaction. Please use the debit function.                                                                               |
+| 52   | Unauthorized transaction. Please use the credit function.                                                                              |
+| 53   | Unauthorized transaction. Please use the credit function.                                                                              |
+| 59   | Unauthorized transaction. Purchase suspected of fraud, please contact your issuing bank.                                               |
+| 58   | Unauthorized transaction. The provided card is not allowed to perform this type of transaction. Please contact your bank to try again. |
+| 93   | Transaction not authorized by your bank due to suspected fraud. Please contact your bank to try again.                                 |
+| 6    | Transaction not authorized. The provided card does not exist or has incorrect data, please use valid data from an existing card.       |
+| 3    | Transaction not authorized. Invalid merchant.                                                                                          |
+| 19   | Transaction not authorized. Acquirer issue.                                                                                            |
+| 12   | Transaction not authorized. Format error. Please contact your bank to try again.                                                       |
+| 82   | Transaction not authorized. Card error. Please contact your bank to try again.                                                         |
+| 75   | Unauthorized transaction. Password/purchase attempt amount exceeded.                                                                   |
+| 76   | Unauthorized transaction. Contact your bank to try again.                                                                              |
+| 61   | Unauthorized transaction. Value exceeded. Contact your card center.                                                                    |
+| 64   | Unauthorized transaction. Contact your bank to try again.                                                                              |
+| N4   | Unauthorized transaction. Value exceeded. Contact your card center.                                                                    |
+| 74   | Unauthorized transaction. Password expired. Contact your card center.                                                                  |
+| 81   | Unauthorized transaction. Password expired. Contact your card center.                                                                  |
+| 78   | Unauthorized transaction. Unlock the card.                                                                                             |
+| 91   | Unauthorized transaction. Communication failure. Try later.                                                                            |
+| 92   | Unauthorized transaction. Contact your bank to try again.                                                                              |
+| 94   | Unauthorized transaction. Contact your bank to try again.                                                                              |
+| 96   | Unauthorized transaction. Communication failure. Try later.                                                                            |
+| N8   | Unauthorized transaction. Value different from pre-authorization. Contact your bank to try again.                                      |
+| N3   | Unauthorized transaction. Withdrawal not available. Contact your bank to try again.                                                    |
+| R0   | Unauthorized transaction. Recurring payment suspension. Contact your bank to try again.                                                |
+| R1   | Unauthorized transaction. Recurring payment suspension. Contact your bank to try again.                                                |
+| R3   | Unauthorized transaction. Recurring payment suspension. Contact your bank to try again.                                                |
+
+### MasterCard
+
+| Code | What does it mean?                                                                                                                 |
+| ---- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| 15   | Unauthorized transaction. Contact your bank to try again.                                                                          |
+| 51   | Unauthorized transaction. Card restricted due to lack of limit, contact your issuing bank.                                         |
+| 58   | Unauthorized transaction. The provided card is not allowed to carry out this type of transaction. Contact your bank to try again.  |
+| 1    | Unauthorized transaction. The card provided does not exist or has incorrect data, please use data from an existing and valid card. |
+| 3    | Unauthorized transaction. Invalid trader.                                                                                          |
+| 30   | Unauthorized transaction. Purchaser problem                                                                                        |
+| 88   | Unauthorized transaction. Card error. Contact your bank to try again.                                                              |
+| 12   | Unauthorized transaction. Invalid installment amount.                                                                              |
+| 75   | Unauthorized transaction. Password/purchase attempt amount exceeded. Contact your card center.                                     |
+| 61   | Unauthorized transaction. Value exceeded. Contact your card center.                                                                |
+| 91   | Unauthorized transaction. Communication failure. Try later.                                                                        |
+| 96   | Unauthorized transaction. Communication failure. Try later.                                                                        |
+
+### Elo
+
+| Code | What does it mean?                                                                                     |
+| ---- | ------------------------------------------------------------------------------------------------------ |
+| 51   | Unauthorized transaction. Card restricted due to lack of limit, contact your issuing bank.             |
+| 59   | Unauthorized transaction. Purchase with suspected fraud, contact your issuing bank.                    |
+| 4    | Transaction not completed. Please try again.                                                           |
+| 58   | Unauthorized transaction. Invalid merchant.                                                            |
+| 6    | Unauthorized transaction. Consult accreditor.                                                          |
+| 19   | Unauthorized transaction. Purchaser problem.                                                           |
+| 30   | Unauthorized transaction. Format error. Contact your bank to try again.                                |
+| 82   | Unauthorized transaction. Card error. Contact your bank to try again.                                  |
+| 64   | Unauthorized transaction. Invalid minimum transaction amount.                                          |
+| 23   | Unauthorized transaction. Invalid installment amount.                                                  |
+| 38   | Unauthorized transaction. Password/purchase attempt amount exceeded. Contact your card center.         |
+| 75   | Unauthorized transaction. Exceeded withdrawal attempt amount. Contact your card center.                |
+| 61   | Unauthorized transaction. Value exceeded. Contact your card center.                                    |
+| 74   | Unauthorized transaction. Password expired. Contact your card center.                                  |
+| P5   | Unauthorized transaction. Invalid password. Contact your bank to try again.                            |
+| 76   | Unauthorized transaction. Invalid or non-existent destination account. Contact your bank to try again. |
+| 77   | Unauthorized transaction. Invalid or non-existent source account. Contact your bank to try again.      |
+| 78   | Unauthorized transaction. Unlock the card.                                                             |
+| 91   | Unauthorized transaction. Communication failure. Try later.                                            |
+| 96   | Unauthorized transaction. Communication failure. Try later.                                            |
+| 99   | Unauthorized transaction. Value different from pre-authorization. Contact your bank to try again.      |
+| AB   | Unauthorized transaction. Use the credit function.                                                     |
+| AC   | Unauthorized transaction. Use the debit function.                                                      |
+| P6   | Unauthorized transaction. Invalid password. Use the new password.                                      |
+
+### American Express
+
+| Code | What does it mean?                                                                                                                 |
+| ---- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| 116  | Unauthorized transaction. Card restricted due to lack of limit, contact your issuing bank.                                         |
+| 117  | Unauthorized transaction. Invalid password.                                                                                        |
+| 200  | Transaction not authorized by your bank due to suspected fraud. Contact your bank to try again.                                    |
+| 122  | Unauthorized transaction. The card provided does not exist or has incorrect data, please use data from an existing and valid card. |
+| 115  | Unauthorized transaction. The card provided does not exist or has incorrect data, please use data from an existing and valid card. |
+| 101  | Unauthorized transaction. The card provided has expired, please insert a valid card.                                               |
+| 109  | Unauthorized transaction. Invalid trader.                                                                                          |
+| 181  | Unauthorized transaction. Format error. Contact your bank to try again.                                                            |
+| 180  | Unauthorized transaction. Card error. Contact your bank to try again.                                                              |
+| 110  | Unauthorized transaction. Invalid transaction amount.                                                                              |
+| 106  | Unauthorized transaction. Password/purchase attempt amount exceeded. Contact your card center.                                     |
+| 912  | Unauthorized transaction. Communication failure. Try later.                                                                        |
+| 911  | Unauthorized transaction. Communication failure. Try later.      
