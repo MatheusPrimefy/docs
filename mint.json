@@ -52,7 +52,7 @@
       "group": "Get Started",
       "pages": [
         "introduction",
-        "quickstart",
+        "Error",
         "development",
         "Authentication",
         "test cards",
