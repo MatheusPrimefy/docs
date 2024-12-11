@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Primefy API",
   "logo": {
     "dark": "/images/Captura_de_tela_2024-12-06_132151-removebg-preview.png",
     "light": "/logo/light.svg"
