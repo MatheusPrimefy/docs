@@ -5,7 +5,7 @@ description: "Introduction"
 
 To start the integration process with the Primefy API, the first step is to perform the authentication procedure. This is the step that enables you to connect with the services offered by Primefy.
 
-**On this section**
+## On this section
 
 [**POST - Authentication**](https://www.notion.so/POST-Authentication-0e00c292d14f4e2dbacacb11238fd4e6?pvs=21)
 
@@ -13,9 +13,8 @@ To go through this step, you first need to request the authorization token. To d
 
 The response varies depending on the [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status). **If the request is successful, you will receive a response with a status code of 200**. Additionally, the returned object will provide the username, the token that will be used in subsequent API requests, and an expiration date for that token.
 
-Always valuing security, we recommend that you whitelist or allowlist the domains. `api.premepay.com` and `premeapi-staging.premepay.com` in your servers.
+Always valuing security, we recommend that you whitelist or allowlist the domains `api.premepay.com` and `premeapi-staging.premepay.com` in your servers.
 
-
-<Info>
-  🚧 The Authentication Token expires after 60 minutes. After this period, it is necessary to authenticate again.
-</Info>
+<aside>
+🚧 **The Authentication Token expires after 60 minutes.** After this period, it is necessary to authenticate again.
+</aside>
