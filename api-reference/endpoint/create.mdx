@@ -2,3 +2,112 @@
 title: 'Create new estabelecimento'
 api: 'POST {{baseUrl}}/signup/'
 ---
+
+## **POST Add User**
+
+`https://api.premepay.com/v1/authentication` 
+
+### List of basic parameters
+
+| Parameter | Description |
+| --- | --- |
+| `username` * | Username |
+| `password` * | Password |
+
+### **Request example**
+
+This is an example of how your authentication request should look like.
+
+- Body
+    
+    ```json
+    {
+      "username": "severino.gael.dasneves@petcamp.com.br",
+      "password": "okfa9f2oap29kmlafs9"
+    }
+    ```
+    
+
+### **Response**
+
+This is the response for cases where your request is successful.
+
+- 200: OK
+    
+    ```json
+    {
+    	"username": "severino.gael.dasneves@petcamp.com.br",
+    	"name": "Severino Gael das Neves",
+    	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIzNzMiLCJ1bmlxdWVfbmFtZSI6Im5laW1hci5wZXJlekB3ZWdldDJ1LmNvbSIsInJvbGUiOiJCdXNpbmVzcy5Pd25lciIsIkJ1c2luZXNzIjoiMzk4IiwiU3RvcmVzIjoiWzU1Nl0iLCJJc0FkbWluIjoiRmFsc2UiLCJuYmYiOjE2NDg5MTUzMjIsImV4cCI6nTY0ODkxODkyMiwiaWF0IjoxNjQ4OTE1MzIyfQ.E2yZT5xWt38xC0NttI2S3IA5A8OCPH225MYA53XicgY",
+    	"expiryAt": "2022-04-02T17:02:02.5349997Z",
+    	"storeId": 18426,
+    	"entityType": "Business",
+    	"businessId": 85612,
+    	"role": "Business.Owner"
+    }
+    ```
+    
+
+If your request has invalid creation parameters - for example, specifying an invalid field or value - you may receive an error response. Below is the complete list of possible error responses:
+
+`Bad Request` is the generic response returned when attempting authentication that was unsuccessful either because the user was not found in our database or because an invalid username or password was provided. We do not return specific messages indicating that only the username is invalid or that the password is incorrect for that user for security reasons.
+
+- 400: Bad Request
+    
+    ```jsx
+    {
+        "type": "https://httpstatuses.com/400",
+        "title": "Bad Request",
+        "status": 400,
+        "detail": "User not found"
+    }
+    ```
+    
+
+Other messages related to authorization on different endpoints may be displayed, such as returning details of a sale, for example, where the user does not have access to this functionality.
+
+This is the response for cases where the request was unsuccessful because valid authentication credentials for the target resource were not provided.
+
+- 401: Unauthorized
+    
+    ```json
+    {
+      "type": "https://httpstatuses.com/401",
+      "title": "Unauthorized",
+      "status": 401,
+      "detail": null,
+      "instance": null,
+      "extensions": {}
+    }
+    ```
+    
+
+The `Forbidden`  message may be displayed in more specific scenarios, such as when a `business` attempts to register a `customer` in a store that is not under its domain. In this case, the returned message is 403 - Forbidden
+
+- 403: Forbidden
+    
+    ```jsx
+    {
+      "type": "https://httpstatuses.com/401",
+      "title": "Forbidden",
+      "status": 403,
+      "detail": null,
+      "instance": null,
+      "extensions": {}
+    }
+    ```
+    
+
+---
+
+**Conteúdo Relacionado**
+
+<aside>
+<img src="POST.png" alt="POST.png" width="40px" /> [POST - Add user](https://www.notion.so/POST-Add-user-cc6a0c83b5044886ae8370e01b0b28ea?pvs=21)
+
+</aside>
+
+<aside>
+<img src="DELETE.png" alt="DELETE.png" width="40px" /> [DELETE - Delete user](https://www.notion.so/DELETE-Delete-user-5e9649df013649d6ab3078ec1c1b3823?pvs=21)
+
+</aside>
